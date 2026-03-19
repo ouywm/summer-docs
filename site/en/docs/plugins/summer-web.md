@@ -3,6 +3,7 @@ title: "summer-web Plugin"
 description: "How to use the summer-web plugin"
 ---
 
+# summer-web Plugin
 
 summer-web is based on <a href='https://github.com/tokio-rs/axum' target='_blank'>axum</a>
 
@@ -255,7 +256,7 @@ Complete code reference [`web-middleware-example`][web-middleware-example]
 
 summer-web is a thin wrapper around axum, adding some macros to simplify development. [The examples of axum](https://github.com/tokio-rs/axum/tree/main/examples) can be run in summer-web.
 
-# SocketIO support
+## SocketIO support
 
 You can enable the `socket_io` feature of `summer-web` to use a integration with [socketioxide](https://github.com/Totodore/socketioxide).
 
@@ -271,7 +272,7 @@ You can refer to the [socketio-example](https://github.com/summer-rs/summer-rs/t
 We can share components registered by plugins in SocketIO handlers, just like in normal HTTP handlers, for example, using the Sqlx connection pool component registered by the `SqlxPlugin` plugin.
 
 
-# OpenAPI support
+## OpenAPI support
 
 You can enable the `openapi` feature of `summer-web` to use OpenAPI documentation generation. You can refer to the [openapi-example](https://github.com/summer-rs/summer-rs/tree/master/examples/openapi-example) for more information.
 

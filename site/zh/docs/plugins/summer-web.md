@@ -3,6 +3,7 @@ title: "summer-web插件"
 description: "web插件如何使用"
 ---
 
+# summer-web插件
 
 summer-web是基于<a href='https://github.com/tokio-rs/axum' target='_blank'>axum</a>实现的
 
@@ -229,7 +230,7 @@ mod routes {
 summer-web是围绕axum的一层薄薄的封装, 提供了一些宏以简化开发. [axum官方的examples](https://github.com/tokio-rs/axum/tree/main/examples)大多只要稍作修改即可运行在summer-web中。
 
 
-# SocketIO 支持
+## SocketIO 支持
 
 你可以启用 `summer-web` 的 `socket_io` 功能，以使用与 [socketioxide](https://github.com/Totodore/socketioxide) 的集成。
 
@@ -245,7 +246,7 @@ SocketIO 是 WebSocket 的一种实现，提供更多的定义功能：
 
 我们可以在 SocketIO 处理器中共享插件注册的组件，就像在普通 HTTP 处理器中一样，例如使用由 `SqlxPlugin` 插件注册的 Sqlx 连接池组件。
 
-# OpenAPI 支持
+## OpenAPI 支持
 
 你可以启用 `summer-web` 的 `openapi` 功能来生成 OpenAPI 文档。你可以参考 [openapi-example](https://github.com/summer-rs/summer-rs/tree/master/examples/openapi-example) 获取更多信息。
 
