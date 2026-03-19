@@ -211,7 +211,7 @@ export default defineConfig({
   ],
   markdown: {
     showLineNumbers: true,
-    defaultWrapCode: true,
+    defaultWrapCode: false,
   },
   themeConfig: {
     search: true,
