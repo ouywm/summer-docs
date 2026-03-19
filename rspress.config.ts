@@ -166,7 +166,7 @@ export default defineConfig({
         lang: 'en',
         label: 'English',
         nav: [
-          { text: 'Home', link: '/' },
+          { text: 'Home', link: '/', activeMatch: '^/$' },
           { text: 'Docs', link: '/docs/getting-started/introduction/', activeMatch: '/docs/' },
           { text: 'Blog', link: '/blog/', activeMatch: '/blog/' },
           { text: 'GitHub', link: 'https://github.com/summer-rs/summer-rs' },
@@ -177,7 +177,7 @@ export default defineConfig({
         lang: 'zh',
         label: '简体中文',
         nav: [
-          { text: '首页', link: '/zh/' },
+          { text: '首页', link: '/zh/', activeMatch: '^/zh/$' },
           { text: '文档', link: '/zh/docs/getting-started/introduction/', activeMatch: '/zh/docs/' },
           { text: '博客', link: '/zh/blog/', activeMatch: '/zh/blog/' },
           { text: 'GitHub', link: 'https://github.com/summer-rs/summer-rs' },

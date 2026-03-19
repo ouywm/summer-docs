@@ -1,29 +1,8 @@
-# Rspress website
+# summer-docs
 
-## Setup
+这个项目主要是为了学习和使用 `Rspress`，并在这个过程中搭建 `summer-rs` 的文档站点。
 
-Install the dependencies:
+当前仓库包含：
 
-```bash
-npm install
-```
-
-## Get started
-
-Start the dev server:
-
-```bash
-npm run dev
-```
-
-Build the website for production:
-
-```bash
-npm run build
-```
-
-Preview the production build locally:
-
-```bash
-npm run preview
-```
+- 中英文文档与博客
+- 从旧文档仓库迁移过来的内容
