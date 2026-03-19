@@ -150,6 +150,7 @@ export default defineConfig({
   search: {
     mode: 'local',
   },
+  llms: true,
   markdown: {
     showLineNumbers: true,
     defaultWrapCode: true,
