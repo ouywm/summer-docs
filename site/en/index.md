@@ -5,7 +5,7 @@ description: "summer-rs is an application framework written in Rust, inspired by
 hero:
   name: summer-rs
   text: Rust application framework
-  tagline: "An application framework written in Rust, inspired by Java's Spring Boot."
+  tagline: "An application framework written in Rust, inspired by Java's Spring Boot, with its docs site now migrated to Rspress."
   actions:
     - theme: brand
       text: Get Started
