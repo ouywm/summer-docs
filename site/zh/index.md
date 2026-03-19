@@ -5,7 +5,7 @@ description: "summer-rs 是一个 Rust 应用框架，设计上受到 Java Sprin
 hero:
   name: summer-rs
   text: Rust 应用框架
-  tagline: 一个设计思路接近 Java Spring Boot 的 Rust 应用框架，文档站现已迁移到 Rspress。
+  tagline: 一个设计思路接近 Java Spring Boot 的 Rust 应用框架。
   actions:
     - theme: brand
       text: 快速开始
