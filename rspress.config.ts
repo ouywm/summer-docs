@@ -1,5 +1,7 @@
+import { execSync } from 'node:child_process';
 import * as path from 'node:path';
 import { defineConfig } from '@rspress/core';
+import { pluginSitemap } from '@rspress/plugin-sitemap';
 
 function resolveBase() {
   if (process.env.GITHUB_ACTIONS !== 'true') {
@@ -13,6 +15,55 @@ function resolveBase() {
 
   return `/${repository}/`;
 }
+
+function ensureTrailingSlash(value: string) {
+  return value.endsWith('/') ? value : `${value}/`;
+}
+
+function resolveGitHubRepository() {
+  const repository = process.env.GITHUB_REPOSITORY?.trim();
+  if (repository?.includes('/')) {
+    const [owner, repo] = repository.split('/');
+    if (owner && repo) {
+      return { owner, repo };
+    }
+  }
+
+  try {
+    const remoteUrl = execSync('git remote get-url origin', {
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+    const match = remoteUrl.match(/github\.com[:/]([^/]+)\/(.+?)(?:\.git)?$/);
+
+    if (match) {
+      return { owner: match[1], repo: match[2] };
+    }
+  } catch {}
+
+  return null;
+}
+
+function resolveSiteUrl() {
+  const explicitSiteUrl = process.env.SITE_URL?.trim();
+  if (explicitSiteUrl) {
+    return ensureTrailingSlash(explicitSiteUrl);
+  }
+
+  const repository = resolveGitHubRepository();
+  if (!repository) {
+    throw new Error('Unable to resolve sitemap siteUrl. Set SITE_URL before building.');
+  }
+
+  if (repository.repo.endsWith('.github.io')) {
+    return `https://${repository.repo}/`;
+  }
+
+  return `https://${repository.owner}.github.io/${repository.repo}/`;
+}
+
+const base = resolveBase();
+const siteUrl = resolveSiteUrl();
 
 const enDocsSidebar = {
   '/docs/': [
@@ -125,7 +176,7 @@ const zhDocsSidebar = {
 };
 
 export default defineConfig({
-  base: resolveBase(),
+  base,
   root: path.join(__dirname, 'site'),
   lang: 'en',
   title: 'summer-rs',
@@ -151,6 +202,13 @@ export default defineConfig({
     mode: 'local',
   },
   llms: true,
+  plugins: [
+    pluginSitemap({
+      siteUrl,
+      defaultChangeFreq: 'weekly',
+      defaultPriority: '0.6',
+    }),
+  ],
   markdown: {
     showLineNumbers: true,
     defaultWrapCode: true,

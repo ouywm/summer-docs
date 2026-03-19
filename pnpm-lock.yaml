@@ -15,6 +15,9 @@ importers:
         specifier: ^1.0.11
         version: 1.0.11
     devDependencies:
+      '@rspress/plugin-sitemap':
+        specifier: ^2.0.6
+        version: 2.0.6(@rspress/core@2.0.6(@types/mdast@4.0.4)(@types/react@19.2.14)(micromark-util-types@2.0.2)(micromark@4.0.2))
       '@types/node':
         specifier: ^22.8.1
         version: 22.19.15
@@ -149,6 +152,12 @@ packages:
     resolution: {integrity: sha512-QtVu2V3N3ZTAE6wmiOzDABPBrSLxyMgK8x2LoRaDmu2xc/iklF46Is2oYgEJRJgip0fCuAhihvVwAtmuP61jrg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
+
+  '@rspress/plugin-sitemap@2.0.6':
+    resolution: {integrity: sha512-54ur6NkJaAt5SsD2CugcFsUsaVlcRJ8Ej/szxKTtBLvvWEldJ8vvKfipR052H/RBfr2/LQw4f9Mv7FepJBcuIA==}
+    engines: {node: ^20.19.0 || >=22.12.0}
+    peerDependencies:
+      '@rspress/core': ^2.0.6
 
   '@rspress/shared@2.0.6':
     resolution: {integrity: sha512-jCVJP08/LmrU0Xc6tP+B2v0YDadXiayA4mUCgiSlaCPHALDuFVWAq+OSVL8XpWa4QY/3gbAmsnji5x8LBtbciA==}
@@ -1179,6 +1188,10 @@ snapshots:
       - micromark-util-types
       - supports-color
       - webpack-hot-middleware
+
+  '@rspress/plugin-sitemap@2.0.6(@rspress/core@2.0.6(@types/mdast@4.0.4)(@types/react@19.2.14)(micromark-util-types@2.0.2)(micromark@4.0.2))':
+    dependencies:
+      '@rspress/core': 2.0.6(@types/mdast@4.0.4)(@types/react@19.2.14)(micromark-util-types@2.0.2)(micromark@4.0.2)
 
   '@rspress/shared@2.0.6':
     dependencies:
