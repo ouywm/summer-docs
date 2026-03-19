@@ -1,6 +1,19 @@
 import * as path from 'node:path';
 import { defineConfig } from '@rspress/core';
 
+function resolveBase() {
+  if (process.env.GITHUB_ACTIONS !== 'true') {
+    return '/';
+  }
+
+  const repository = process.env.GITHUB_REPOSITORY?.split('/')[1];
+  if (!repository || repository.endsWith('.github.io')) {
+    return '/';
+  }
+
+  return `/${repository}/`;
+}
+
 const enDocsSidebar = {
   '/docs/': [
     { text: 'Overview', link: '/docs/' },
@@ -112,6 +125,7 @@ const zhDocsSidebar = {
 };
 
 export default defineConfig({
+  base: resolveBase(),
   root: path.join(__dirname, 'site'),
   lang: 'en',
   title: 'summer-rs',

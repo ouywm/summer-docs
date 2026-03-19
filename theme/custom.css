@@ -46,8 +46,6 @@
     radial-gradient(circle at 18% 12%, rgba(146, 193, 68, 0.22), transparent 28%),
     radial-gradient(circle at 80% 10%, rgba(123, 200, 205, 0.2), transparent 30%),
     linear-gradient(180deg, #f5faf5 0%, #fbfdfb 48%, #ffffff 100%);
-  --summer-home-overlay:
-    linear-gradient(180deg, rgba(245, 250, 245, 0.08) 0%, rgba(255, 255, 255, 0.72) 66%, #ffffff 100%);
 }
 
 .dark {
@@ -55,8 +53,6 @@
     radial-gradient(circle at 18% 12%, rgba(146, 193, 68, 0.16), transparent 28%),
     radial-gradient(circle at 82% 12%, rgba(123, 200, 205, 0.14), transparent 30%),
     linear-gradient(180deg, #08110d 0%, #0c1714 46%, #111a19 100%);
-  --summer-home-overlay:
-    linear-gradient(180deg, rgba(8, 17, 13, 0.08) 0%, rgba(9, 18, 17, 0.54) 64%, #111a19 100%);
 }
 
 .summer-home-background__base {
@@ -65,8 +61,7 @@
   z-index: 0;
 }
 
-.summer-home-background__layer,
-.summer-home-background__overlay {
+.summer-home-background__layer {
   position: absolute;
   inset: 0 0 auto;
   width: 100%;
@@ -78,10 +73,6 @@
 
 .summer-home-background__layer {
   opacity: 0.95;
-}
-
-.summer-home-background__overlay {
-  background: var(--summer-home-overlay);
 }
 
 .summer-soft-aurora {

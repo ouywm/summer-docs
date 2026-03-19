@@ -25,7 +25,6 @@ export function HomeBackground() {
           mouseInfluence={0.2}
         />
       </div>
-      <div className="summer-home-background__overlay" aria-hidden="true" />
     </>
   );
 }
