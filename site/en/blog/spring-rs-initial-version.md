@@ -4,6 +4,8 @@ description: "After a month of iteration, I wrote an application framework in Ru
 ---
 
 
+# summer-rs initial version released
+
 > Published: 2024-08-04
 
 After a month of iteration, I wrote an application framework in Rust with a design similar to Spring Boot. The following is an example of the simplest web application

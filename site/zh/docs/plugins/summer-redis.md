@@ -4,6 +4,8 @@ description: "redis插件如何使用"
 ---
 
 
+# summer-redis插件
+
 summer-redis是针对<a href='https://github.com/redis-rs/redis-rs' target='_blank'>redis-rs</a>的自动装配
 
 <div class="doc-badge-row">

@@ -4,6 +4,8 @@ description: "How to use the summer-grpc plugin"
 ---
 
 
+# summer-grpc Plugin
+
 summer-grpc is based on <a href='https://github.com/hyperium/tonic' target='_blank'>tonic</a>
 
 <div class="doc-badge-row">

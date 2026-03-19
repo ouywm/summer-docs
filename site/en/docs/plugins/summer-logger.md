@@ -4,6 +4,8 @@ description: "How to use the logger plugin"
 ---
 
 
+# logger Plugin
+
 logger is based on <a href='https://tracing.rs/' target='_blank'>tracing</a>
 
 ## Introduction

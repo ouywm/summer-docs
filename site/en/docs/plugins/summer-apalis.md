@@ -4,6 +4,8 @@ description: "How to use the summer-apalis plugin"
 ---
 
 
+# summer-apalis Plugin
+
 summer-apalis is an automatic assembly for <a href='https://github.com/apalis-dev/apalis' target='_blank'>apalis</a>
 
 <div class="doc-badge-row">

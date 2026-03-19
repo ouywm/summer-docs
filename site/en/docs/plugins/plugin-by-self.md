@@ -4,6 +4,8 @@ description: "How to write your own plugins"
 ---
 
 
+# Writing your own plugins
+
 <div class="doc-badge-row">
 <a href="https://crates.io/crates/summer"><img src="https://img.shields.io/crates/v/summer.svg" alt="crates.io"/></a>
 <a href="https://docs.rs/summer"><img src="https://docs.rs/summer/badge.svg" alt="Documentation"/></a>

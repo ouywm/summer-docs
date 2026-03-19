@@ -4,6 +4,8 @@ description: "如何编写自己的插件"
 ---
 
 
+# 编写自己的插件
+
 插件是summer-rs的核心概念之一，summer-rs正是通过插件机制扩展应用的功能
 
 <div class="doc-badge-row">

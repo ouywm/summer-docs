@@ -4,6 +4,8 @@ description: "The summer-stream plugin is a programming tool for real-time strea
 ---
 
 
+# summer-stream plugin released
+
 > Published: 2024-08-25
 
 The summer-stream plugin is a programming tool for real-time streaming message processing, which can greatly simplify message processing based on files, redis stream, and kafka.

@@ -4,6 +4,8 @@ description: "sqlx插件如何使用"
 ---
 
 
+# summer-sqlx插件
+
 summer-sqlx是针对<a href='https://github.com/launchbadge/sqlx' target='_blank'>sqlx</a>的自动装配
 
 <div class="doc-badge-row">

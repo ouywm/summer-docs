@@ -4,6 +4,8 @@ description: "apalis插件如何使用"
 ---
 
 
+# summer-apalis插件
+
 summer-apalis是针对<a href='https://github.com/apalis-dev/apalis' target='_blank'>apalis</a>的自动装配
 
 <div class="doc-badge-row">

@@ -4,6 +4,8 @@ description: "sea-orm插件如何使用"
 ---
 
 
+# summer-sea-orm插件
+
 summer-sea-orm是针对<a href='https://github.com/SeaQL/sea-orm' target='_blank'>sea-orm</a>的自动装配
 
 <div class="doc-badge-row">

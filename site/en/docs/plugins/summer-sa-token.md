@@ -4,6 +4,8 @@ description: "Automatic assembly for sa-token-rust"
 ---
 
 
+# summer-sa-token Plugin
+
 summer-sa-token is an automatic assembly for <a href='https://github.com/click33/sa-token-rust' target='_blank'>sa-token-rust</a>
 
 <div class="doc-badge-row">

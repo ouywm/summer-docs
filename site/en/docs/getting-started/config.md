@@ -4,6 +4,8 @@ description: "summer-rs implements a concise configuration loading function"
 ---
 
 
+# Load Configuration
+
 <b>summer-rs</b> implements a concise configuration loading function
 
 You can define configuration in the following way:

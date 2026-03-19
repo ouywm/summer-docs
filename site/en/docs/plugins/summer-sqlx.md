@@ -4,6 +4,8 @@ description: "How to use the summer-sqlx plugin"
 ---
 
 
+# summer-sqlx Plugin
+
 summer-sqlx is an automatic assembly for <a href='https://github.com/launchbadge/sqlx' target='_blank'>sqlx</a>
 
 <div class="doc-badge-row">

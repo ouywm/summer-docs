@@ -4,6 +4,8 @@ description: "How to use summer-sea-orm plugin"
 ---
 
 
+# summer-sea-orm Plugin
+
 summer-sea-orm is an automatic assembly for <a href='https://github.com/SeaQL/sea-orm' target='_blank'>sea-orm</a>
 
 <div class="doc-badge-row">

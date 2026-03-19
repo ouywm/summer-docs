@@ -4,6 +4,8 @@ description: "在代码变更后自动重启服务"
 ---
 
 
+# 自动热重启
+
 代码变更后自动编译并重启服务，这在开发过程中会非常方便。
 
 使用[`cargo-watch`](https://github.com/watchexec/cargo-watch)可以轻松实现这个功能。

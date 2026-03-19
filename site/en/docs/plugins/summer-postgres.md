@@ -4,6 +4,8 @@ description: "How to use the summer-postgres plugin"
 ---
 
 
+# summer-postgres Plugin
+
 summer-postgres is an autowire for <a href='https://github.com/sfackler/rust-postgres' target='_blank'>rust-postgres</a>
 
 <div class="doc-badge-row">

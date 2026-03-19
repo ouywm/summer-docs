@@ -4,6 +4,8 @@ description: "How to use summer-stream plugin"
 ---
 
 
+# summer-stream Plugin
+
 summer-stream is based on <a href='https://github.com/SeaQL/sea-streamer' target='_blank'>sea-streamer</a>
 
 <div class="doc-badge-row">

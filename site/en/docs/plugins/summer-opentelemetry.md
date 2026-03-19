@@ -4,6 +4,8 @@ description: "How to use the opentelemetry plugin"
 ---
 
 
+# opentelemetry Plugin
+
 OpenTelemetry is a full-dimensional observability solution that integrates logs, metrics, and tracing.
 
 ## A brief history of OpenTelemetry

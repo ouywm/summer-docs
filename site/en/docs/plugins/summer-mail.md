@@ -4,6 +4,8 @@ description: "How to use the summer-mail plugin"
 ---
 
 
+# summer-mail Plugin
+
 summer-mail is an automatic assembly for <a href='https://github.com/lettre/lettre' target='_blank'>lettre</a>
 
 ![lettre Repo stars](https://img.shields.io/github/stars/lettre/lettre) ![downloads](https://img.shields.io/crates/d/lettre.svg)

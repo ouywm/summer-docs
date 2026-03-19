@@ -4,6 +4,8 @@ description: "The Benchmark of the summer-rs"
 ---
 
 
+# Data comparison between rust's summer-rs and java's SpringBoot
+
 > Published: 2024-09-04
 
 The size of the release binary built with summer-rs is half of the SpringBoot jar package. [Rust still have a lot of room for optimization](https://github.com/johnthagen/min-sized-rust).

@@ -4,6 +4,8 @@ description: "sa-token-rust 的自动装配"
 ---
 
 
+# summer-sa-token 插件
+
 summer-sa-token 是针对[sa-token-rust](https://github.com/click33/sa-token-rust)的自动装配
 
 <div class="doc-badge-row">

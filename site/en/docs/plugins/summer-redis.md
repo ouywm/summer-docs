@@ -4,6 +4,8 @@ description: "How to use the summer-redis plugin"
 ---
 
 
+# summer-redis Plugin
+
 summer-redis is an automatic assembly for <a href='https://github.com/redis-rs/redis-rs' target='_blank'>redis-rs</a>
 
 <div class="doc-badge-row">

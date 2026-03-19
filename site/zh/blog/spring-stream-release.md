@@ -4,6 +4,8 @@ description: "summer-stream插件是实时流式处理消息的编程工具"
 ---
 
 
+# summer-stream插件发布了
+
 > 发布时间: 2024-08-25
 
 summer-stream插件是实时流式处理消息的编程工具，可以大大简化基于文件、redis stream、kafka的消息处理

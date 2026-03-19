@@ -268,6 +268,89 @@ function rewriteTerminology(content, locale) {
   return applyReplacements(content, replacements);
 }
 
+function collectHeadingInfo(content) {
+  const lines = content.split('\n');
+  const headings = [];
+  let inCodeFence = false;
+  let contentLinesBeforeFirstH1 = 0;
+  let hasHeadingBeforeFirstH1 = false;
+  let foundFirstH1 = false;
+
+  for (let index = 0; index < lines.length; index += 1) {
+    const line = lines[index];
+    const trimmed = line.trim();
+
+    if (codeFenceDelimiterPattern.test(trimmed)) {
+      inCodeFence = !inCodeFence;
+      continue;
+    }
+
+    if (inCodeFence) {
+      continue;
+    }
+
+    const headingMatch = trimmed.match(/^(#{1,6})\s+(.*)$/);
+    if (headingMatch) {
+      const level = headingMatch[1].length;
+      headings.push({ index, level, text: headingMatch[2].trim() });
+
+      if (!foundFirstH1) {
+        if (level === 1) {
+          foundFirstH1 = true;
+        } else {
+          hasHeadingBeforeFirstH1 = true;
+        }
+      }
+      continue;
+    }
+
+    if (!foundFirstH1 && trimmed) {
+      contentLinesBeforeFirstH1 += 1;
+    }
+  }
+
+  return {
+    lines,
+    headings,
+    contentLinesBeforeFirstH1,
+    hasHeadingBeforeFirstH1,
+  };
+}
+
+function demoteHeadingOne(line) {
+  return line.replace(/^(\s*)#(\s+)/, '$1##$2');
+}
+
+function normalizePageHeadings(content, title) {
+  const { lines, headings, contentLinesBeforeFirstH1, hasHeadingBeforeFirstH1 } =
+    collectHeadingInfo(content);
+  const h1Headings = headings.filter((heading) => heading.level === 1);
+  const hasStablePageH1 =
+    h1Headings.length > 0 &&
+    !hasHeadingBeforeFirstH1 &&
+    contentLinesBeforeFirstH1 <= 8;
+
+  let insertTitleHeading = false;
+
+  if (!h1Headings.length) {
+    insertTitleHeading = Boolean(title);
+  } else if (hasStablePageH1) {
+    for (const heading of h1Headings.slice(1)) {
+      lines[heading.index] = demoteHeadingOne(lines[heading.index]);
+    }
+  } else {
+    insertTitleHeading = Boolean(title);
+    for (const heading of h1Headings) {
+      lines[heading.index] = demoteHeadingOne(lines[heading.index]);
+    }
+  }
+
+  return {
+    insertTitleHeading,
+    body: lines.join('\n').trim(),
+  };
+}
+
 function isBadgeImageUrl(url) {
   return badgeImageUrlPattern.test(url);
 }
@@ -431,7 +514,15 @@ function migratePages(sourceDir, outputSubdir) {
     const lead = rewriteTerminology(getFrontmatterValue(frontmatter, 'lead'), locale);
     const date = getFrontmatterValue(frontmatter, 'date');
     const updated = getFrontmatterValue(frontmatter, 'updated');
+    const normalizedBody = normalizePageHeadings(
+      rewriteTerminology(renderBody(sourcePath, body, locale), locale),
+      title,
+    );
     const parts = [buildFrontmatter({ title, description })];
+
+    if (normalizedBody.insertTitleHeading && title) {
+      parts.push(`# ${title}`);
+    }
 
     if (date) {
       const publishLabel = locale === 'zh' ? '发布时间' : 'Published';
@@ -447,7 +538,7 @@ function migratePages(sourceDir, outputSubdir) {
       parts.push(lead);
     }
 
-    parts.push(rewriteTerminology(renderBody(sourcePath, body, locale), locale));
+    parts.push(normalizedBody.body);
 
     const outputPath = path.join(siteRoot, locale, outputSubdir, `${slug}.md`);
     write(outputPath, `${parts.filter(Boolean).join('\n\n').trim()}\n`);

@@ -4,6 +4,8 @@ description: "summer-rs supports simple compile-time dependency injection"
 ---
 
 
+# Dependency inject
+
 <b>summer-rs</b> provides a simple implementation of compile-time dependency injection
 
 ## Compile-time dependency inject

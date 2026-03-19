@@ -4,6 +4,8 @@ description: "mail插件如何使用"
 ---
 
 
+# summer-mail插件
+
 summer-mail是针对<a href='https://github.com/lettre/lettre' target='_blank'>lettre</a>的自动装配
 
 ![lettre Repo stars](https://img.shields.io/github/stars/lettre/lettre) ![downloads](https://img.shields.io/crates/d/lettre.svg)

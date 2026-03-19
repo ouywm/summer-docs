@@ -4,6 +4,8 @@ description: "logger插件如何使用"
 ---
 
 
+# logger插件
+
 logger插件是基于<a href='https://tracing.rs/' target='_blank'>tracing</a>实现的
 
 ## 介绍

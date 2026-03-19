@@ -4,6 +4,8 @@ description: "rust的summer-rs和java的SpringBoot相关压测报告"
 ---
 
 
+# rust的summer-rs和java的SpringBoot数据对比
+
 > 发布时间: 2024-09-04
 
 使用summer-rs构建的release版二进制文件大小是SpringBoot jar包的一半。[rust应该还有很大的优化空间](https://github.com/johnthagen/min-sized-rust)。

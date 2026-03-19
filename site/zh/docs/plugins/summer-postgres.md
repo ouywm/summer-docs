@@ -4,6 +4,8 @@ description: "postgres插件如何使用"
 ---
 
 
+# summer-postgres插件
+
 summer-postgres是针对<a href='https://github.com/sfackler/rust-postgres' target='_blank'>rust-postgres</a>的自动装配
 
 <div class="doc-badge-row">
